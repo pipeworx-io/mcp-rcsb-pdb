@@ -1,0 +1,20 @@
+{
+  "name": "@pipeworx/mcp-rcsb-pdb",
+  "version": "0.1.0",
+  "description": "RCSB Protein Data Bank experimental structures",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "rcsb-pdb"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipeworx-io/mcp-rcsb-pdb"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}
