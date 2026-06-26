@@ -32,7 +32,7 @@ const UA = 'pipeworx-mcp-rcsb-pdb/1.0 (+https://pipeworx.io)';
 const tools: McpToolExport['tools'] = [
   {
     name: 'search',
-    description: 'Text search across PDB. Returns matching PDB IDs.',
+    description: '"Find protein structure of [target]" / "search PDB for [protein]" / "is there a crystal structure of [X]" / "[disease target] structures" / "CRISPR / kinase / GPCR structures" — text search the RCSB PDB (the global archive of experimentally-determined 3D protein/RNA/DNA structures). Returns matching PDB IDs you can pass to `structure` or `summary`. Use for structural biology, drug design, protein characterization.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -45,7 +45,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'structure',
-    description: 'Full entry record by PDB ID (e.g. "1abc").',
+    description: '"PDB entry [1abc] details" / "fetch protein structure [pdb_id]" / "metadata for [PDB ID]" — full PDB entry record by ID (e.g. "1abc", "7BV2"). Returns experimental method (X-ray / cryo-EM / NMR), resolution, authors, deposition date, organism, ligands, related entities. Use after `search` to inspect a specific structure.',
     inputSchema: {
       type: 'object',
       properties: { pdb_id: { type: 'string' } },
@@ -54,7 +54,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'polymer_entity',
-    description: 'Polymer-entity (chain) metadata.',
+    description: '"Chain [N] of PDB [ID]" / "sequence of chain in [pdb_id]" — fetch the polymer-entity (protein/DNA/RNA chain) metadata for a specific PDB entry. Returns sequence, source organism, UniProt cross-references, GO annotations. Use to drill into one chain of a multi-chain structure.',
     inputSchema: {
       type: 'object',
       properties: { pdb_id: { type: 'string' }, entity_id: { type: 'string' } },
@@ -63,7 +63,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'ligand',
-    description: 'Non-polymer ligand record (e.g. cofactor, drug).',
+    description: '"Ligand / cofactor / drug bound to [pdb_id]" / "small molecule in [PDB entry]" — fetch a non-polymer ligand record (small molecule, cofactor, ion, or bound drug) for a PDB entry. Use to inspect what\'s bound in a co-crystal structure — common in drug discovery / SBDD.',
     inputSchema: {
       type: 'object',
       properties: { pdb_id: { type: 'string' }, ligand_id: { type: 'string' } },
@@ -72,7 +72,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'assembly',
-    description: 'Biological assembly (defaults to "1" — the first/canonical).',
+    description: '"Biological assembly of [pdb_id]" / "functional oligomer for [PDB entry]" — fetch a biological assembly record (the functional oligomeric unit, which often differs from the crystallographic asymmetric unit). Use when you need the actual functional form of a protein (dimer / tetramer / etc.) rather than the crystal contents.',
     inputSchema: {
       type: 'object',
       properties: { pdb_id: { type: 'string' }, assembly_id: { type: 'string' } },
@@ -81,7 +81,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'summary',
-    description: 'Short entry summary.',
+    description: 'Lightweight lookup for a PDB entry by 4-char ID: tries the RCSB UniProt endpoint first, falls back to the core entry record. Returns title, experimental method, resolution, and deposition date without the full polymer/ligand detail of `structure`.',
     inputSchema: {
       type: 'object',
       properties: { pdb_id: { type: 'string' } },
