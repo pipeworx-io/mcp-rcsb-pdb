@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/rcsb-pdb",
   "title": "Rcsb Pdb",
   "description": "RCSB PDB MCP — experimentally determined macromolecular structures.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "websiteUrl": "https://pipeworx.io/packs/rcsb-pdb",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-rcsb-pdb",
