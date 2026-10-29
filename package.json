@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-rcsb-pdb",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "RCSB PDB MCP — experimentally determined macromolecular structures.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-rcsb-pdb": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "rcsb-pdb"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-rcsb-pdb.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/rcsb-pdb",
   "pipeworx": {
-    "sourceHash": "v1-c50ee7bbd68af79a1ab22c8fb15c826e21f580daeae3cc679c27d6b5c95900ab",
-    "sourceCommit": "6fe8fb3e01138dfc4ebe7d5c246503aab9278d06"
+    "mode": "gateway",
+    "slug": "rcsb-pdb",
+    "gatewaySlug": "rcsb-pdb",
+    "sourceHash": "v1-5b596b1caa650be8111d00039c4c6fa69ebd96ebbc9a2da9b0faed68d4a2dec7",
+    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
   }
 }
