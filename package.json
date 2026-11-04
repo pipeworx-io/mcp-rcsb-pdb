@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-rcsb-pdb",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "RCSB PDB MCP — experimentally determined macromolecular structures.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "rcsb-pdb",
     "gatewaySlug": "rcsb-pdb",
-    "sourceHash": "v1-5b596b1caa650be8111d00039c4c6fa69ebd96ebbc9a2da9b0faed68d4a2dec7",
-    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
+    "sourceHash": "v1-62b5de4bbd11166d68d233fe9a6abc17591ca1d1d99d706db10ab3dff2e4706a",
+    "sourceCommit": "db27387ed3ef7ec4805d465f7964a7f65f937006"
   }
 }
